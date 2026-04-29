@@ -1,23 +1,293 @@
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Times New Roman',Georgia,serif;background:#fff;color:#000;font-size:12px;line-height:1.5}
-.resume{max-width:850px;margin:0 auto;padding:40px}
-.header{text-align:center;border-bottom:2px solid #000;padding-bottom:20px;margin-bottom:24px}
-.header h1{font-size:28px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;margin-bottom:8px}
-.header .title{font-size:14px;margin-bottom:12px;font-style:italic}
-.header .contact{font-size:11px}
-.header .contact span{margin:0 10px}
-.section{margin-bottom:20px}
-.section-title{font-size:14px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;border-bottom:1px solid #000;padding-bottom:4px;margin-bottom:12px}
-.skills-grid{display:flex;flex-wrap:wrap;gap:8px}
-.skill-item{background:#f5f5f5;padding:6px 12px;border:1px solid #ccc}
-.skill-item strong{display:block;font-size:10px;color:#666;margin-bottom:2px}
-.edu-item,.project-item{margin-bottom:14px}
-.edu-item:last-child,.project-item:last-child{margin-bottom:0}
-.edu-header,.project-header{display:flex;justify-content:space-between;align-items:baseline}
-.edu-header h3,.project-header h3{font-size:13px;font-weight:bold}
-.edu-header .time,.project-header .time{font-size:11px}
-.edu-item .school{font-size:12px;font-style:italic;margin-bottom:4px}
-.edu-item ul,.project-item ul{list-style:disc;padding-left:20px;font-size:11px}
-.edu-item li,.project-item li{margin-bottom:2px}
-.footer{text-align:center;font-size:10px;color:#999;margin-top:30px;padding-top:15px;border-top:1px solid #ddd}
-@media(max-width:768px){.resume{padding:20px}.header h1{font-size:22px}.skills-grid{flex-direction:column}}
+/* === 通用 === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+    background: #6C2D8B;
+    color: #333;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* === 主体卡片 === */
+.resume-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(108, 45, 139, 0.4);
+}
+
+/* === 头部 === */
+.resume-header {
+    background: linear-gradient(135deg, #6C2D8B 0%, #9B59B6 50%, #8E44AD 100%);
+    color: #ffffff;
+    padding: 50px 50px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.resume-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 50% 50% 0 0;
+}
+
+.resume-header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.resume-header .subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.resume-header .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.resume-header .contact-row span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* === 主体内容 === */
+.resume-body {
+    padding: 50px 50px 40px;
+}
+
+/* === 通用区块 === */
+.section {
+    margin-bottom: 36px;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #6C2D8B;
+    border-left: 4px solid #9B59B6;
+    padding-left: 12px;
+    margin-bottom: 18px;
+}
+
+/* === 技能 === */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.skill-card {
+    background: linear-gradient(135deg, #f3e8ff, #ede0f5);
+    border: 1px solid #d9b8f0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: transform 0.2s;
+}
+
+.skill-card:hover {
+    transform: translateY(-2px);
+}
+
+.skill-card .skill-cat {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9B59B6;
+    margin-bottom: 6px;
+}
+
+.skill-card .skill-tags {
+    font-size: 13px;
+    color: #444;
+    font-weight: 500;
+}
+
+/* === 教育 === */
+.edu-item {
+    margin-bottom: 20px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f8f0ff, #f3e8ff);
+    border-left: 4px solid #9B59B6;
+}
+
+.edu-item:last-child {
+    margin-bottom: 0;
+}
+
+.edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.edu-top h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #6C2D8B;
+}
+
+.edu-top .time {
+    font-size: 12px;
+    color: #9B59B6;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.edu-school {
+    font-size: 13px;
+    color: #7B5192;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.edu-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.edu-item li {
+    font-size: 12.5px;
+    color: #555;
+    margin-bottom: 3px;
+    padding-left: 14px;
+    position: relative;
+}
+
+.edu-item li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    font-size: 7px;
+    top: 4px;
+    color: #9B59B6;
+}
+
+/* === 项目 === */
+.project-item {
+    margin-bottom: 20px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f8f0ff, #f3e8ff);
+    border-left: 4px solid #9B59B6;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.project-top h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #6C2D8B;
+}
+
+.project-top .time {
+    font-size: 12px;
+    color: #9B59B6;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.project-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-item li {
+    font-size: 12.5px;
+    color: #555;
+    margin-bottom: 4px;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.project-item li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    font-size: 7px;
+    top: 4px;
+    color: #9B59B6;
+}
+
+/* === 页脚 === */
+.resume-footer {
+    background: #6C2D8B;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* === 响应式 === */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 12px;
+    }
+    .resume-header {
+        padding: 40px 24px 30px;
+    }
+    .resume-header h1 {
+        font-size: 30px;
+    }
+    .resume-body {
+        padding: 36px 24px 30px;
+    }
+    .resume-header .contact-row {
+        gap: 14px;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .edu-top, .project-top {
+        flex-direction: column;
+    }
+}
