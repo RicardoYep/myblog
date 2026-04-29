@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Georgia, serif;
+    background: #ffffff;
+    color: #000000;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.resume {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* === 头部 === */
+.header {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.header .title {
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.header .contact {
+    font-size: 11px;
+}
+
+.header .contact span {
+    margin: 0 10px;
+}
+
+/* === 通用 === */
+.section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+}
+
+/* === 技能 === */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-item {
+    background: #f5f5f5;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+}
+
+.skill-item strong {
+    display: block;
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+/* === 教育 === */
+.edu-item {
+    margin-bottom: 14px;
+}
+
+.edu-item:last-child {
+    margin-bottom: 0;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.edu-header h3 {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.edu-header .time {
+    font-size: 11px;
+}
+
+.edu-item .school {
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 4px;
+}
+
+.edu-item ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 11px;
+}
+
+.edu-item li {
+    margin-bottom: 2px;
+}
+
+/* === 项目 === */
+.project-item {
+    margin-bottom: 14px;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.project-header h3 {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.project-header .time {
+    font-size: 11px;
+}
+
+.project-item ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 11px;
+}
+
+.project-item li {
+    margin-bottom: 2px;
+}
+
+/* === 页脚 === */
+.footer {
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .resume {
+        padding: 20px;
+    }
+    .header h1 {
+        font-size: 22px;
+    }
+    .skills-grid {
+        flex-direction: column;
+    }
+}
