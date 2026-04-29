@@ -1,19 +1,3 @@
-/* ==================== 基础样式 ==================== */
-:root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary: #64748b;
-    --bg-primary: #f8fafc;
-    --bg-card: #ffffff;
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --border: #e2e8f0;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    --radius: 16px;
-    --radius-sm: 8px;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -21,214 +5,244 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--text-primary);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
     line-height: 1.6;
-    min-height: 100vh;
+    font-size: 15px;
 }
 
-/* ==================== 博客首页布局 ==================== */
-.blog-home {
-    max-width: 700px;
+/* ==================== 主容器 ==================== */
+.resume-container {
+    max-width: 800px;
     margin: 0 auto;
-    padding: 40px 20px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
 
-.blog-header {
-    text-align: center;
-    background: var(--bg-card);
-    border-radius: var(--radius);
-    padding: 48px 32px;
-    margin-bottom: 24px;
-    box-shadow: var(--shadow-lg);
+/* ==================== 头部 ==================== */
+.resume-header {
+    background: #1a365d;
+    color: white;
+    padding: 40px 48px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
 }
 
-.blog-header .avatar-img {
+.avatar-img {
     width: 120px;
     height: 120px;
-    margin: 0 auto 24px;
-    border-radius: 50%;
+    border-radius: 4px;
     object-fit: cover;
-    border: 4px solid white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid rgba(255,255,255,0.2);
 }
 
-.blog-header h1 {
+.header-info h1 {
     font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-}
-
-.blog-header .subtitle {
-    color: var(--text-secondary);
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.blog-header .contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-.content-section {
-    background: var(--bg-card);
-    border-radius: var(--radius);
-    padding: 32px;
-    margin-bottom: 24px;
-    box-shadow: var(--shadow);
-}
-
-.content-section h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--primary);
-    color: var(--primary);
-}
-
-.content-section h3 {
-    font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
+    letter-spacing: 1px;
 }
 
-.content-section p {
-    color: var(--text-secondary);
-    margin-bottom: 8px;
-}
-
-.content-section ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.content-section li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
-    color: var(--text-secondary);
-}
-
-.content-section li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-    font-weight: bold;
-}
-
-/* Skills Grid */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 16px;
-}
-
-.skill-category {
-    background: var(--bg-primary);
-    padding: 16px;
-    border-radius: var(--radius-sm);
-    text-align: center;
-}
-
-.skill-category h3 {
+.header-info .title {
     font-size: 14px;
-    color: var(--primary);
-    margin-bottom: 8px;
-}
-
-.skill-category p {
-    font-size: 14px;
-    color: var(--text-primary);
-}
-
-/* Timeline */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.timeline-item {
-    padding-left: 20px;
-    border-left: 2px solid var(--border);
-}
-
-.timeline-item .time {
-    font-size: 13px;
-    color: var(--primary);
-    margin-bottom: 4px;
-}
-
-.timeline-item .school {
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-}
-
-/* Project Card */
-.project-card {
-    background: var(--bg-primary);
-    padding: 20px;
-    border-radius: var(--radius-sm);
+    color: #a0aec0;
     margin-bottom: 16px;
 }
 
-.project-card:last-child {
+.header-info .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+.header-info .contact-row span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ==================== 内容区域 ==================== */
+.resume-body {
+    padding: 32px 48px;
+}
+
+.section {
+    margin-bottom: 28px;
+}
+
+.section:last-child {
     margin-bottom: 0;
 }
 
-.project-card h3 {
-    color: var(--text-primary);
+.section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a365d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #1a365d;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+/* ==================== 技能 ==================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.skill-item {
+    background: #f7fafc;
+    padding: 12px 16px;
+    border-left: 3px solid #1a365d;
+}
+
+.skill-item h4 {
+    font-size: 12px;
+    color: #718096;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-item p {
+    font-size: 14px;
+    color: #2d3748;
+}
+
+/* ==================== 教育经历 ==================== */
+.edu-item {
+    margin-bottom: 20px;
+}
+
+.edu-item:last-child {
+    margin-bottom: 0;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     margin-bottom: 4px;
 }
 
-.project-card .time {
+.edu-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.edu-header .time {
     font-size: 13px;
-    color: var(--primary);
-    margin-bottom: 12px;
+    color: #718096;
+}
+
+.edu-item .school {
+    font-size: 14px;
+    color: #4a5568;
+    margin-bottom: 6px;
+}
+
+.edu-item ul {
+    list-style: none;
+}
+
+.edu-item li {
+    font-size: 13px;
+    color: #4a5568;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.edu-item li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1a365d;
+}
+
+/* ==================== 项目经历 ==================== */
+.project-item {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #f7fafc;
+    border-radius: 4px;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.project-header h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.project-header .time {
+    font-size: 12px;
+    color: #718096;
+}
+
+.project-item ul {
+    list-style: none;
+}
+
+.project-item li {
+    font-size: 13px;
+    color: #4a5568;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.project-item li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1a365d;
 }
 
 /* ==================== 页脚 ==================== */
-.footer {
+.resume-footer {
+    background: #f7fafc;
+    padding: 16px 48px;
     text-align: center;
-    padding: 24px;
-    color: white;
-    font-size: 14px;
-    opacity: 0.8;
+    font-size: 12px;
+    color: #718096;
+    border-top: 1px solid #e2e8f0;
 }
 
-/* ==================== 响应式设计 ==================== */
+/* ==================== 响应式 ==================== */
 @media (max-width: 768px) {
-    .blog-home {
-        padding: 20px 16px;
-    }
-    
-    .blog-header {
-        padding: 32px 20px;
-    }
-    
-    .blog-header h1 {
-        font-size: 24px;
-    }
-    
-    .blog-header .contact-info {
+    .resume-header {
         flex-direction: column;
-        gap: 8px;
+        text-align: center;
+        padding: 32px 24px;
     }
     
-    .content-section {
+    .header-info .contact-row {
+        justify-content: center;
+    }
+    
+    .resume-body {
         padding: 24px;
     }
     
     .skills-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
